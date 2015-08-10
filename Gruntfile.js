@@ -30,22 +30,16 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     gzip: {
-      default_options: {
-        options: {
-        },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
+      options: { detail: false},
+      index: {
+        src: [
+          './public/views/index.html',
+          './public/images/*.png',
+          '!./public/images/box.png',
+          './public/dist/app.*.js',
+          './public/dist/style.*.css'
+        ]
       },
-      custom_options: {
-        options: {
-          separator: ': ',
-          punctuation: ' !!!'
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
-      }
     },
 
     // Unit tests.
